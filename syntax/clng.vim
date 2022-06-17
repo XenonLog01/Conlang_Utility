@@ -12,7 +12,7 @@ endif
 set iskeyword=a-z,A-Z,=,@,!
 syntax keyword clngTodos TODO FIXME NOTE URGENT
 
-syntax keyword clngKeywords category symbol shape syllable 
+syntax keyword clngKeywords category symbol shape syllable load
 
 syntax region clngCommentLine start='#' end='$' contains=clngTodos
 

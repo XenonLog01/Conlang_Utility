@@ -51,10 +51,32 @@ def parse_text(txt):
         list_out(text[1])
     elif text[0] == 'syllable':
         gen_syllable(text[1:])
+    elif text[0] == 'load':
+        load_file(text[1:])
     elif text[0] == '':
         pass
     else:
         print(f"Invalid Command {text[0]}!")
+
+def load_file(inputs):
+    f = inputs[0]
+    text = []
+
+    with open(f, 'r') as fl:
+        text = fl.read().split('\n')
+
+    for ln in text:
+        line = ''
+        for i in range(len(ln)):
+            if ln[i] == '#':
+                break
+            else:
+                line += ln[i]
+
+        if ln == '':
+            continue
+        else:
+            parse_text(ln)
 
 def gen_syllable(inputs):
     # syllable <shape> <qty>
@@ -134,8 +156,6 @@ def run_file():
     text = []
     with open(sys.argv[1], 'r') as file:
         text = file.read().split('\n')
-
-    text = text[:-1]
 
     for ln in text:
         line = ''
