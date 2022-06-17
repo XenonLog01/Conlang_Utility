@@ -3,12 +3,14 @@ from cat import Category
 import sys
 
 # TODO - Loading files
+#        - This can literally just be copying the text over.
 # TODO - An stdlib
 # TODO - Better error handling
 #        - Currently it only spits out an error for a few things.
 # TODO - Vim syntax highlighting
 # TODO - Documentation
 #        - Both for the code and the language.
+# TODO - A way to make syllables generate with random syllable shapes.
 
 shapes = []
 symbols = []
@@ -26,6 +28,8 @@ def parse_text(txt):
         list_out(text[1])
     elif text[0] == 'syllable':
         gen_syllable(text[1:])
+    elif: text[0][0] == '#':
+        pass
     else:
         print(f"Invalid Command {text[0]}!")
 
