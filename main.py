@@ -7,6 +7,8 @@ import sys
 # TODO - Better error handling
 #        - Currently it only spits out an error for a few things.
 # TODO - Vim syntax highlighting
+# TODO - Documentation
+#        - Both for the code and the language.
 
 shapes = []
 symbols = []
