@@ -1,5 +1,9 @@
 " Vim syntax file
 " Language: clng
+" Usage:
+"   Place this file in .vim/syntax/clng.vim
+"   and add into your .vimrc file the following:
+"   autocmd BufRead,BufNewFile *.clng set filetype=clng
 
 if exists('b:current_syntax')
     finish

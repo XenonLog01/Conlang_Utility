@@ -1,3 +1,5 @@
+# NOTE - This is a *very* simple program
+# It was made in the alpha versions of this project.
 category consonants = p t k s n m
 category nasals = n m
 category vowels = i u a

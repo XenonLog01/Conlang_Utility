@@ -7,7 +7,6 @@ import sys
 # TODO - An stdlib
 # TODO - Better error handling
 #        - Currently it only spits out an error for a few things.
-# TODO - Vim syntax highlighting
 # TODO - Documentation
 #        - Both for the code and the language.
 # TODO - A way to make syllables generate with random syllable shapes.
