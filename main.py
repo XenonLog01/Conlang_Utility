@@ -28,7 +28,7 @@ def parse_text(txt):
         list_out(text[1])
     elif text[0] == 'syllable':
         gen_syllable(text[1:])
-    elif: text[0][0] == '#':
+    elif text[0][0] == '#':
         pass
     else:
         print(f"Invalid Command {text[0]}!")
