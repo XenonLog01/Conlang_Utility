@@ -16,8 +16,23 @@ shapes = []
 symbols = []
 categories = []
 
+def rm_extra_whitespace(text):
+    last_was_ws = False
+    out = ''
+    for t in text:
+        if t in ' \t':
+            if last_was_ws:
+                continue
+            else:
+                last_was_ws = True
+        else:
+            last_was_ws = False
+        out += t
+
+    return out
+
 def parse_text(txt):
-    text = txt.split(' ')
+    text = rm_extra_whitespace(txt).split(' ')
     if text[0] == 'symbol':
         gen_symbol(text[1:])
     elif text[0] == 'category':
@@ -28,8 +43,6 @@ def parse_text(txt):
         list_out(text[1])
     elif text[0] == 'syllable':
         gen_syllable(text[1:])
-    elif text[0][0] == '#':
-        pass
     else:
         print(f"Invalid Command {text[0]}!")
 
@@ -100,6 +113,7 @@ def list_out(thing):
     else:
         print("Could not find specified category!")
         return
+
 def main():
     while True:
         txt = input('clng> ')
@@ -114,6 +128,12 @@ def run_file():
     text = text[:-1]
 
     for ln in text:
+        line = ''
+        for i in range(len(ln)):
+            if ln[i] == '#':
+                break
+            line += ln[i]
+
         if ln == '':
             continue
         else:
