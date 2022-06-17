@@ -1,0 +1,20 @@
+category consonants = t p k s f n m
+category nasals     = n m
+category vowels     = i u e o a
+
+symbol Consonant = C consonants
+symbol Nasal     = N nasals
+symbol Vowel     = V vowels
+
+shape CVC
+shape CVN
+shape CV
+
+list categories
+list symbols
+list shapes
+
+# syllable CVC 5 
+# syllable CVN 5 
+# syllable CV  5 
+
