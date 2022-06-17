@@ -17,6 +17,7 @@ categories = []
 
 def rm_extra_whitespace(text):
     last_was_ws = False
+    in_comment = False
     out = ''
     for t in text:
         if t in ' \t':
@@ -26,12 +27,20 @@ def rm_extra_whitespace(text):
                 last_was_ws = True
         else:
             last_was_ws = False
-        out += t
+
+        if in_comment:
+            continue
+        else:
+            if t == '#':
+                in_comment = True
+            else:
+                out += t
 
     return out
 
 def parse_text(txt):
     text = rm_extra_whitespace(txt).split(' ')
+
     if text[0] == 'symbol':
         gen_symbol(text[1:])
     elif text[0] == 'category':
@@ -42,6 +51,8 @@ def parse_text(txt):
         list_out(text[1])
     elif text[0] == 'syllable':
         gen_syllable(text[1:])
+    elif text[0] == '':
+        pass
     else:
         print(f"Invalid Command {text[0]}!")
 
@@ -131,7 +142,8 @@ def run_file():
         for i in range(len(ln)):
             if ln[i] == '#':
                 break
-            line += ln[i]
+            else:
+                line += ln[i]
 
         if ln == '':
             continue
