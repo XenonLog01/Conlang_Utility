@@ -4,7 +4,7 @@ import sys
 
 # TODO - Loading files
 #        - This can literally just be copying the text over.
-# TODO - An stdlib
+# TODO - An std lib
 # TODO - Better error handling
 #        - Currently it only spits out an error for a few things.
 # TODO - Documentation
@@ -81,7 +81,11 @@ def load_file(inputs):
 def gen_syllable(inputs):
     # syllable <shape> <qty>
     shape = []
-    qty = int(inputs[1])
+    qty = 0
+    try:
+        qty = int(inputs[1])
+    except Exception:
+        qty = 1
 
     for char in inputs[0]:
         for sym in symbols:
