@@ -16,7 +16,8 @@ syntax keyword clngKeywords category symbol shape syllable load list
 
 syntax region clngCommentLine start='#' end='$' contains=clngTodos
 
-syntax region clngNumber start=/\s\d/ skip=/\d/ end=/(\s|\D)/
+syntax match clngNumber '[-+]\=\d\+\(\.\d\+\)\=\([eE][-+]\=\d\+\)\='
+syntax match clngNumber '[-+]\=\.\d\+\([eE][-+]\=\d\+\)\='
 
 highlight default link clngTodos Todo
 highlight default link clngKeywords Keyword
