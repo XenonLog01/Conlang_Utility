@@ -12,6 +12,7 @@ class Repl:
         SymbolCmd(),
         CategoryCmd(),
         ShapeCmd(),
+        SyllableCmd(),
         ListCmd()
     ]
 

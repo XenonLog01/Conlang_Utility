@@ -65,6 +65,27 @@ class ShapeCmd(Command):
         self.shape = Shape(shape_str, symbols)
         shapes.append(self.shape)
 
+class SyllableCmd(Command):
+    def __init__(self):
+        super().__init__('syllable')
+
+    def execute(self, inputs, categories, symbols, shapes):
+        shape = []
+        qty = 1
+        
+        if len(inputs) > 1:
+            qty = int(inputs[1])
+        
+        for char in inputs[0]:
+            for sym in symbols:
+                if sym.sym == char:
+                    shape.append(sym)
+                    break
+
+        for i in range(qty):
+            syllable = Syllable(shape)
+            print(repr(syllable))
+
 class ListCmd(Command):
     def __init__(self):
         super().__init__('list')
