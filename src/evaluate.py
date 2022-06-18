@@ -1,5 +1,5 @@
-from syl_gen import *
-from cat import *
+from src.syl_gen import *
+from src.cat import *
 
 class Command:
     def __init__(self, name):
